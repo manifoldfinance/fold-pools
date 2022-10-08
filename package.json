@@ -1,8 +1,8 @@
 {
   "name": "fold-pools",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/fold-pools.git"
