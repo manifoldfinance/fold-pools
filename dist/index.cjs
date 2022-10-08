@@ -1,13 +1,15 @@
-import { ethers } from 'ethers';
-import { Pool } from '@uniswap/v3-sdk';
-import { Token } from '@uniswap/sdk-core';
-import { abi } from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
+'use strict';
 
-const provider = new ethers.providers.JsonRpcProvider(
+var ethers = require('ethers');
+var v3Sdk = require('@uniswap/v3-sdk');
+var sdkCore = require('@uniswap/sdk-core');
+var IUniswapV3Pool_json = require('@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json');
+
+const provider = new ethers.ethers.providers.JsonRpcProvider(
   "https://mainnet.infura.io/v3/3ff0c675dc614116aa126b14f6368971"
 );
 const poolAddress = "0xe081eeab0adde30588ba8d5b3f6ae5284790f54a";
-const poolContract = new ethers.Contract(poolAddress, abi, provider);
+const poolContract = new ethers.ethers.Contract(poolAddress, IUniswapV3Pool_json.abi, provider);
 async function getPoolImmutables() {
   const immutables = {
     factory: await poolContract.factory(),
@@ -36,9 +38,9 @@ async function getPoolState() {
 async function main() {
   const immutables = await getPoolImmutables();
   const state = await getPoolState();
-  const TokenB = new Token(1, immutables.token1, 6, "USDC", "USD Coin");
-  const TokenA = new Token(1, immutables.token0, 18, "FOLD", "Manifold Finance");
-  const poolExample = new Pool(
+  const TokenB = new sdkCore.Token(1, immutables.token1, 6, "USDC", "USD Coin");
+  const TokenA = new sdkCore.Token(1, immutables.token0, 18, "FOLD", "Manifold Finance");
+  const poolExample = new v3Sdk.Pool(
     TokenA,
     TokenB,
     immutables.fee,
@@ -49,4 +51,4 @@ async function main() {
   console.log(poolExample);
 }
 main();
-//# sourceMappingURL=index.mjs.map
+//# sourceMappingURL=index.js.map

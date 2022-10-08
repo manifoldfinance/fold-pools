@@ -2,7 +2,7 @@ import {ethers} from 'ethers';
 import {Pool} from '@uniswap/v3-sdk';
 import {Token} from '@uniswap/sdk-core';
 import {abi as IUniswapV3PoolABI} from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
-import {abi as Multicall } from '@uniswap/v3-periphery/artifacts/contracts/interfaces/IMulticall.sol/IMulticall.json'
+import {abi as Multicall } from '@uniswap/v3-periphery/artifacts/contracts/interfaces/IMulticall.sol/IMulticall.json';
 
 const provider = new ethers.providers.JsonRpcProvider(
   'https://mainnet.infura.io/v3/3ff0c675dc614116aa126b14f6368971',
@@ -62,8 +62,8 @@ async function getPoolState() {
 async function main() {
   const immutables = await getPoolImmutables();
   const state = await getPoolState();
-  const TokenA = new Token(1, immutables.token0, 6, 'USDC', 'USD Coin');
-  const TokenB = new Token(1, immutables.token1, 18, 'FOLD', 'Manifold Finance');
+  const TokenB = new Token(1, immutables.token1, 6, 'USDC', 'USD Coin');
+  const TokenA = new Token(1, immutables.token0, 18, 'FOLD', 'Manifold Finance');
 
   const poolExample = new Pool(
     TokenA,
