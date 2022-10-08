@@ -2,6 +2,7 @@ import {ethers} from 'ethers';
 import {Pool} from '@uniswap/v3-sdk';
 import {Token} from '@uniswap/sdk-core';
 import {abi as IUniswapV3PoolABI} from '@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json';
+import {abi as Multicall } from '@uniswap/v3-periphery/artifacts/contracts/interfaces/IMulticall.sol/IMulticall.json'
 
 const provider = new ethers.providers.JsonRpcProvider(
   'https://mainnet.infura.io/v3/3ff0c675dc614116aa126b14f6368971',
