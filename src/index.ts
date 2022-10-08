@@ -62,7 +62,7 @@ async function main() {
   const immutables = await getPoolImmutables();
   const state = await getPoolState();
   const TokenA = new Token(1, immutables.token0, 6, 'USDC', 'USD Coin');
-  const TokenB = new Token(1, immutables.token1, 18, 'WETH', 'Wrapped Ether');
+  const TokenB = new Token(1, immutables.token1, 18, 'FOLD', 'Manifold Finance');
 
   const poolExample = new Pool(
     TokenA,

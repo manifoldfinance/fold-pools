@@ -5,13 +5,12 @@
     "indentSize": 2
   },
   "compilerOptions": {
+"resolveJsonModule": true,
     "allowSyntheticDefaultImports": false,
     "allowUnreachableCode": false,
     "esModuleInterop": false,
     "declaration": true,
-    "emitDeclarationOnly": true,
     "isolatedModules": true,
-    "tsBuildInfoFile": "./",
     "moduleResolution": "nodenext",
     "moduleDetection": "auto",
     "module": "NodeNext",
