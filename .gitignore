@@ -20,7 +20,7 @@ node_modules
 tmp/
 _dev/
 coverage/
-/dist
+!dist
 /build
 
 ## Binary ##
