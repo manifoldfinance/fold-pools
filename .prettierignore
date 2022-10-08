@@ -1,0 +1,7 @@
+build/
+dist/
+docs/
+*.min.js
+*.js
+tmp/
+**/fixtures/*
